@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roger D. Amos | Fort Smith AI & Automation Consultant</title>
+    <title>RoboInfra | Fort Smith AI & Automation Consultant</title>
     <style>
         * {
             margin: 0;
@@ -78,7 +78,69 @@
             color: var(--primary);
         }
 
-        /* Hero Section */
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Mobile Navigation */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            background-color: var(--dark);
+        }
+
+        @media (max-width: 1033px) {
+            .hamburger {
+                display: block;
+            }
+
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+            .nav-links {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                gap: 0;
+                flex-direction: column;
+                background-color: white;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 2rem 0;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links a {
+                margin: 1.5rem 0;
+                display: block;
+                font-size: 1.2rem;
+            }
+        }
+
         .hero {
             min-height: 100vh;
             background: linear-gradient(135deg, #0A0E27 0%, #1a1f3a 100%);
@@ -530,10 +592,6 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
             .hero h1 {
                 font-size: 2.5rem;
             }
@@ -602,10 +660,16 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="logo">RDA Consulting</div>
+            <div class="logo">RoboInfra</div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
             <div class="nav-links">
                 <a href="#services">Services</a>
                 <a href="#tech">Tech Stack</a>
+                <a href="#about">About</a>
                 <a href="#process">Process</a>
                 <a href="#contact">Get Started</a>
             </div>
@@ -654,7 +718,7 @@
                         make AI work for your specific use case.</p>
                     <ul class="service-features">
                         <li>Custom AI workflows</li>
-                        <li>LLM implementation (GPT, Llama, etc.)</li>
+                        <li>Local LLM implementation (Llama 3, AnyGPT)</li>
                         <li>Offline AI solutions</li>
                         <li>Voice assistants & chatbots</li>
                     </ul>
@@ -666,9 +730,9 @@
                     <p>Build zero-touch automation systems that eliminate manual work and scale infinitely. Your
                         processes should run themselves.</p>
                     <ul class="service-features">
-                        <li>End-to-end workflow automation</li>
-                        <li>DevOps & CI/CD pipelines</li>
-                        <li>Infrastructure as Code</li>
+                        <li>Zero-touch provisioning (Ansible, n8n)</li>
+                        <li>DevOps & CI/CD pipelines (Semaphore)</li>
+                        <li>Infrastructure as Code (PowerShell)</li>
                         <li>Self-service portals</li>
                     </ul>
                 </div>
@@ -715,6 +779,7 @@
                     <div class="tech-list">
                         <span class="tech-tag">OpenAI GPT</span>
                         <span class="tech-tag">Llama 3</span>
+                        <span class="tech-tag">AnyGPT</span>
                         <span class="tech-tag">LangChain</span>
                         <span class="tech-tag">TensorFlow</span>
                         <span class="tech-tag">Voice AI</span>
@@ -747,6 +812,8 @@
                         <span class="tech-tag">Kubernetes</span>
                         <span class="tech-tag">Azure</span>
                         <span class="tech-tag">Ansible</span>
+                        <span class="tech-tag">n8n</span>
+                        <span class="tech-tag">Semaphore</span>
                         <span class="tech-tag">PowerShell</span>
                     </div>
                 </div>
@@ -830,6 +897,38 @@
         </div>
     </section>
 
+    <!-- About Section -->
+    <section class="services" id="about" style="background: white;">
+        <div class="container">
+            <div class="section-header">
+                <h2>About the Founder</h2>
+                <p>Roger D. Amos - Software Developer & Automation Architect</p>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto; line-height: 1.8; color: var(--text);">
+                <p style="margin-bottom: 1.5rem;">
+                    "Success is not final, failure is not fatal: it is the courage to continue that counts" - Winston
+                    Churchill
+                </p>
+                <p style="margin-bottom: 1.5rem;">
+                    I proudly embrace the self-proclaimed title of "nerd" due to my passion for exploring and applying
+                    engineering concepts.
+                    While others may gravitate toward video games, I tend to focus on more technical hobbies, such as 3D
+                    printing, Arduino programming, and ham radio.
+                </p>
+                <p style="margin-bottom: 1.5rem;">
+                    My journey includes winning 1st place in Walmart's 2016 Code@thon for "Hey Sparky," a voice
+                    assistant that revolutionized how customers interact with their shopping carts.
+                    This passion for innovation drives everything we do at RoboInfra.
+                </p>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem;">
+                    <span class="tech-tag">Licensed Ham Radio Operator</span>
+                    <span class="tech-tag">3D Printing Enthusiast</span>
+                    <span class="tech-tag">Electrical Engineering</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="cta-section" id="contact">
         <div class="container">
@@ -864,13 +963,27 @@
                     </svg>
                 </a>
             </div>
-            <p>&copy; 2025 Roger D. Amos. Transforming businesses through AI & Automation.</p>
+            <p>&copy; 2025 RoboInfra. Transforming businesses through AI & Automation.</p>
             <p style="margin-top: 1rem; opacity: 0.7;">Fort Smith, Arkansas | Available for Remote & On-site Consulting
             </p>
         </div>
     </footer>
 
     <script>
+        // Mobile Menu
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-links");
+
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        });
+
+        document.querySelectorAll(".nav-links a").forEach(n => n.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+        }));
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -932,7 +1045,7 @@
 
         // Dynamic year in footer
         const currentYear = new Date().getFullYear();
-        document.querySelector('footer p').innerHTML = `&copy; ${currentYear} Roger D. Amos. Transforming businesses through AI & Automation.`;
+        document.querySelector('footer p').innerHTML = `&copy; ${currentYear} RoboInfra. Transforming businesses through AI & Automation.`;
     </script>
 </body>
 
